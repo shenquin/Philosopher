@@ -6,7 +6,7 @@
 /*   By: shenquin <shenquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:56:57 by shenquin          #+#    #+#             */
-/*   Updated: 2021/11/30 17:35:14 by shenquin         ###   ########.fr       */
+/*   Updated: 2021/12/01 15:28:17 by shenquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ int	atoi(char *str)
 		j++;
 	}
 	if (j > 10)
-		return (error_msg("Max int error.\n"));
+		return (error_msg("Error : max int.\n"));
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	if (result > INT32_MAX)
-		return (error_msg("Max int error.\n"));
+		return (error_msg("Error : max int.\n"));
 	return (result);
 }
 

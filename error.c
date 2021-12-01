@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shenquin <shenquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/30 15:56:37 by shenquin          #+#    #+#             */
-/*   Updated: 2021/12/01 15:26:54 by shenquin         ###   ########.fr       */
+/*   Created: 2021/12/01 13:24:53 by shenquin          #+#    #+#             */
+/*   Updated: 2021/12/01 14:41:40 by shenquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosopher.h"
-
-int main(int argc, char **argv)
+int	error_arg(char **argv)
 {
-	t_philo	*philo;
-	t_data	*data;
-	t_ph	*ph;
-	
-	alloc(&ph, &philo, &data);
-	init_struct(ph);
-	if(argc != 5 || argc != 6)
-		return(error_msg("Too many or too few arguments."));
-	error_arg(argv);
-	parsing(philo, argv);
-	free_struct(ph, philo, data);
+	int i;
+
+	i = 1;
+	while(argv[i++])
+	{
+		if(is_digit(argv[i]) != 0)
+			return(error_msg("Error : argument is not a number."));
+	}
 	return(0);
 }

@@ -6,7 +6,7 @@
 /*   By: shenquin <shenquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:56:37 by shenquin          #+#    #+#             */
-/*   Updated: 2021/12/01 15:26:54 by shenquin         ###   ########.fr       */
+/*   Updated: 2021/12/09 16:38:06 by shenquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 int main(int argc, char **argv)
 {
-	t_philo	*philo;
-	t_data	*data;
-	t_ph	*ph;
+	t_philo *philo;
 	
-	alloc(&ph, &philo, &data);
-	init_struct(ph);
-	if(argc != 5 || argc != 6)
-		return(error_msg("Too many or too few arguments."));
-	error_arg(argv);
-	parsing(philo, argv);
-	free_struct(ph, philo, data);
+	init_struct(&philo);
+	if(parsing(&philo, argv) != 0)
+		return(-1);
+	if(error_arg(argc, argv) != 0)
+		return(-1);
+	free_struct(&philo);
 	return(0);
 }

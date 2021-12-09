@@ -6,7 +6,7 @@
 /*   By: shenquin <shenquin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 15:56:57 by shenquin          #+#    #+#             */
-/*   Updated: 2021/12/01 15:28:17 by shenquin         ###   ########.fr       */
+/*   Updated: 2021/12/02 16:39:37 by shenquin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	error_msg(char *str)
 	return(-1);
 }
 
-int	atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int					i;
 	int					j;
@@ -31,8 +31,6 @@ int	atoi(char *str)
 		str++;
 	while (str[j] != '\0')
 	{
-		if (str[j] < '0' || str[j] > '9')
-			return (0);
 		j++;
 	}
 	if (j > 10)
